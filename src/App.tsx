@@ -4,6 +4,13 @@ import "./styles.css";
 import { Todo } from "./todo";
 import { TodoType } from "./types/todo";
 import { Text } from "./text";
+import { UserProfile } from "./UserProfile";
+import { User } from "./types/user";
+
+const user: User = {
+  name: "はけぃ"
+  // hobbies: ["ゲーム", "料理", "昼寝"]
+};
 
 export default function App() {
   const [todos, setTodos] = useState<Array<TodoType>>([]);
@@ -18,6 +25,7 @@ export default function App() {
 
   return (
     <div className="App">
+      <UserProfile user={user} />
       <Text color="red" fontSize="18px" />
       <button onClick={onClickFetchData}>データ取得</button>
       {todos.map((todo) => (
